@@ -1,0 +1,14 @@
+#
+# Board-specific properties only. Anything generic to RK3576 belongs in
+# device/rockchip/rk3576-common/vendor.prop -- both files are concatenated into
+# vendor/build.prop, so a property set in both is a duplicate and fails the
+# build in post_process_props.
+#
+
+## Device identity
+ro.vendor.sdkversion=RK3576_ANDROID14.0_MID_V1.0
+ro.vendor.rksdk.version=ANDROID14_RKR5
+
+## Wi-Fi
+# AIC8800D80 over SDIO (mmc0).
+ro.vendor.wifi.chip=aic8800

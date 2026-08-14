@@ -1,0 +1,6 @@
+## Board specific blobs for the H96 Max M9S.
+##
+## Everything on this board is generic to the RK3576 platform and therefore
+## lives in device/rockchip/rk3576-common/proprietary-files.txt. This file is
+## intentionally kept (empty) so a second RK3576 board can be added without
+## restructuring the common tree.
