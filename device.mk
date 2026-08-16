@@ -8,6 +8,16 @@
 # OP-TEE backed keymint/gatekeeper/weaver come from the stock vendor image.
 TARGET_HAS_TEE := true
 
+## Infrared remote
+# Board-specific on both counts: the file name has to match the input device,
+# which is the PWM node the Rockchip IR driver binds to on this SoC
+# ('27330000.pwm', with '.' -> '_'), and the keycodes it can emit are fixed by
+# the rockchip,key_table nodes in this board's dts. The Edge-2L dump the blobs
+# come from has no vendor/usr directory at all, so without this Android falls
+# back to Generic.kl and the remote does nothing.
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keylayout/27330000_pwm.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/27330000_pwm.kl
+
 ## Inherit from the common tree product makefile
 $(call inherit-product, device/rockchip/rk3576-common/rk3576.mk)
 

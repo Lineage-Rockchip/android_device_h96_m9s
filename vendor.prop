@@ -5,9 +5,10 @@
 # build in post_process_props.
 #
 
-## Device identity
-ro.vendor.sdkversion=RK3576_ANDROID14.0_MID_V1.0
-ro.vendor.rksdk.version=ANDROID14_RKR5
+# ro.vendor.sdkversion and ro.vendor.rksdk.version used to live here. They
+# describe the blob set, not the board -- and since the RKR8 rebase that set is
+# the Khadas Edge-2L dump, which any second RK3576 board would share. Moved to
+# device/rockchip/rk3576-common/vendor.prop.
 
 ## Wi-Fi
 # AIC8800D80 over SDIO (mmc0).
