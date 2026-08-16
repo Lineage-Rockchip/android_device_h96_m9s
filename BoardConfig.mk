@@ -10,8 +10,11 @@ DEVICE_PATH := device/h96/m9s
 TARGET_BOOTLOADER_BOARD_NAME := rk30board
 
 ## DTB
-# The stock firmware ships the RK3576 EVB1 V10 device tree
-# (compatible = "rockchip,rk3576-evb1-v10") unmodified.
+# Built from arch/arm64/boot/dts/rockchip/rk3576-m9s.dts in the kernel tree.
+# The board itself is rk3576-h96-max.dtsi, shared with the M9; only the IR
+# remote key tables differ between the two. Both keep the stock model and
+# compatible strings ("rockchip,rk3576-evb1-v10") because the Rockchip HALs
+# match on them.
 TARGET_DTB_NAME := rk3576-m9s
 
 ## Partitions
