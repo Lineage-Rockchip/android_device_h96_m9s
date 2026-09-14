@@ -18,6 +18,21 @@ TARGET_HAS_TEE := true
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/27330000_pwm.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/27330000_pwm.kl
 
+## Screen density
+# 320 (xhdpi), not stock's 213; pairs with TARGET_SCREEN_DENSITY.
+PRODUCT_AAPT_CONFIG := xlarge large tvdpi hdpi xhdpi
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
+
+## Bluetooth transport
+# Both name the controller's UART (/dev/ttyS4); keep them together.
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/bluetooth/bt_vendor.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/bt_vendor.conf \
+    $(LOCAL_PATH)/init-files/init.connectivity.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.connectivity.rc
+
+## Boot-time kernel modules (ethernet PHY + MAC)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init-files/init.insmod.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/init.insmod.cfg
+
 ## Inherit from the common tree product makefile
 $(call inherit-product, device/rockchip/rk3576-common/rk3576.mk)
 
