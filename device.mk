@@ -16,7 +16,8 @@ TARGET_HAS_TEE := true
 # come from has no vendor/usr directory at all, so without this Android falls
 # back to Generic.kl and the remote does nothing.
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/27330000_pwm.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/27330000_pwm.kl
+    $(LOCAL_PATH)/keylayout/27330000_pwm.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/27330000_pwm.kl \
+    $(LOCAL_PATH)/keylayout/Vendor_0a45_Product_0008.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/Vendor_0a45_Product_0008.kl
 
 ## Screen density
 # 320 (xhdpi), not stock's 213; pairs with TARGET_SCREEN_DENSITY.

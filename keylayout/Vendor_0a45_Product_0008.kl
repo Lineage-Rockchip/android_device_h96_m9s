@@ -1,0 +1,25 @@
+# Key Layout file for MC,LTD XFY MIC RC
+# Vendor: 0a45, Product: 0008
+
+# Directional Pad
+key 103   DPAD_UP
+key 108   DPAD_DOWN
+key 105   DPAD_LEFT
+key 106   DPAD_RIGHT
+
+# OK / Center (Remapped from Enter 28 to DPAD_CENTER to trigger text fields & IME)
+key 28    DPAD_CENTER
+
+# Navigation
+key 158   BACK
+key 1     BACK
+key 172   HOME
+key 127   MENU
+
+# Audio Controls
+key 115   VOLUME_UP
+key 114   VOLUME_DOWN
+key 113   VOLUME_MUTE
+
+# Assistant / Voice
+key 582   VOICE_ASSIST
